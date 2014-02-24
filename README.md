@@ -3,10 +3,10 @@ Mandrill for Meteor
 
 Meteor package for sending email via Mandrill
 
-* Add Mandrill to your project with:
-```
-    mrt add mandrill
-```
+### Add Mandrill to your project with:
+
+	mrt add mandrill
+
 
 ### Usage (coffeescript)
     # in server code
