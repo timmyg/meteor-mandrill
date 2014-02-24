@@ -4,6 +4,6 @@
     "homepage": "https://github.com/timmyg/meteor-mandrill",
     "author": "Tim Giblin",
     "version": "0.0.2",
-    "git": "https://github.com/timmyg/meteor-mandrill",
+    "git": "https://github.com/timmyg/meteor-mandrill.git",
     "packages": {}
 }
