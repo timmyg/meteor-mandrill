@@ -9,5 +9,35 @@ Meteor.Mandrill = {
   },
   send: function(options) {
     Email.send(options);
+  },
+  sendTemplate: function(options) {
+    url = "https://mandrillapp.com/api/1.0/messages/send-template.json";
+    options = {
+      data: {
+        key: options.key,
+        template_name: options.templateSlug,
+        template_content: options.templateContent,
+        message: {
+          from_email: options.fromEmail,
+          to: [
+            {
+              email: options.toEmail
+            }
+          ]
+        },
+        headers: [
+          {
+            "Content-Type": "application/json"
+          }
+        ]
+      }
+    };
+
+    try {
+      result = HTTP.post(url, options);
+    } catch (e) {
+      console.log(e);
+    }
+
   }
 };
