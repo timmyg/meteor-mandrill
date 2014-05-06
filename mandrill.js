@@ -36,7 +36,7 @@ Meteor.Mandrill = {
     try {
       result = HTTP.post(url, options);
     } catch (e) {
-      console.log(e);
+      console.log(e.stack);
     }
 
   }
