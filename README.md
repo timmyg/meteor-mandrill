@@ -40,8 +40,7 @@ Meteor package for sending email via Mandrill
               content: "Vince Carter"
             }
           ]
-        # Read more at http://help.mandrill.com/entries/21678522-How-do-I-use-merge-tags-to-add-dynamic-content-
-        # on how to use merge tags
+        # Read more on how to use merge tags in the [Mandrill Docs](http://help.mandrill.com/entries/21678522-How-do-I-use-merge-tags-to-add-dynamic-content-)
         global_merge_vars: [
             {
                 name: "var1",
