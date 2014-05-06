@@ -40,5 +40,28 @@ Meteor package for sending email via Mandrill
               content: "Vince Carter"
             }
           ]
+        # Read more on how to use merge tags in the Mandrill Docs
+        # http://help.mandrill.com/entries/21678522-How-do-I-use-merge-tags-to-add-dynamic-content-
+        global_merge_vars: [
+            {
+                name: "var1",
+                content: "Global Value 1"
+            }
+        ]
+        merge_vars: [
+            {
+                "rcpt": "emailadress@domain.com",
+                "vars": [
+                    {
+                        "name": "fname",
+                        "content": "John"
+                    },
+                    {
+                        "name": "lname",
+                        "content": "Smith"
+                    }
+                ]
+            }
+        ]
         fromEmail: "from@email.com"
         toEmail: "to@email.com"
