@@ -42,13 +42,13 @@ Meteor package for sending email via Mandrill
           ]
         # Read more on how to use merge tags in the Mandrill Docs
         # http://help.mandrill.com/entries/21678522-How-do-I-use-merge-tags-to-add-dynamic-content-
-        global_merge_vars: [
+        globalMergeVars: [
             {
                 name: "var1",
                 content: "Global Value 1"
             }
         ]
-        merge_vars: [
+        mergeVars: [
             {
                 "rcpt": "emailadress@domain.com",
                 "vars": [
