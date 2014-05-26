@@ -4,7 +4,9 @@ Mandrill for Meteor
 Meteor package for sending email via Mandrill
 
 ### Add Mandrill to your project with:
-
+	
+	meteor add email
+	
 	mrt add mandrill
 
 
