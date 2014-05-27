@@ -3,10 +3,15 @@ Mandrill for Meteor
 
 Meteor package for sending email via Mandrill
 
-### Add Mandrill to your project with:
+##  Installation
 
-	mrt add mandrill
+``` sh
+$ meteor add email
 
+$ meteor add http
+
+$ mrt add mandrill
+```
 
 ### Usage for SMTP email (coffeescript)
     # in server code
