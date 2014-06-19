@@ -15,31 +15,19 @@ Meteor.Mandrill = {
             result;
 
         options = {
-            data: {
-                key: options.key,
-                template_name: options.templateSlug,
-                template_content: options.templateContent,
-                message: {
-                    from_email: options.fromEmail,
-                    to: [
-                        {
-                            email: options.toEmail
-                        }
-                    ],
-                    "global_merge_vars": options.globalMergeVars,
-                    "merge_vars": options.mergeVars
-                },
-                headers: [
-                    {
-                        "Content-Type": "application/json"
-                    }
-                ]
+            "data": {
+                "key": options.key,
+                "template_name": options.template_name,
+                "template_content": options.template_content,
+                "message": options.message,
+                "headers": [{
+                    "Content-Type": "application/json"
+                }]
             }
         };
 
         try {
             result = HTTP.post(url, options);
-
         } catch (e) {
             console.log(e.stack);
         }
