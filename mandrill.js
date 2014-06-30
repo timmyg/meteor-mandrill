@@ -32,5 +32,19 @@ Meteor.Mandrill = {
             console.log(e.stack);
         }
 
+    },
+    renderTemplate: function (options, callback) {
+        var url = "https://mandrillapp.com/api/1.0/templates/render.json";
+
+        try {
+            // if a callback is provided do an asynch call
+            if (!! callback) HTTP.post(url, { data: options }, callback);
+
+            // if no callback do a synchronous call and return the result
+            else return HTTP.post(url, { data: options });
+
+        } catch (e) {
+            console.log(e.stack);
+        }
     }
 };
