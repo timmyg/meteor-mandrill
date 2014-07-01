@@ -14,6 +14,7 @@ $ mrt add mandrill
 ```
 
 ### Usage for SMTP email (coffeescript)
+```coffeescript
     # in server code
     Meteor.startup ->
         Meteor.Mandrill.config
@@ -29,8 +30,10 @@ $ mrt add mandrill
     		#cc, bcc, replyTo
     		subject: subject
     		html: htmlText
+```
 
 ### Usage for API email (coffeescript)
+```coffeescript
     # in server code
     Meteor.Mandrill.sendTemplate
         key: "YOUR_MANDRILL_API_KEY"
@@ -72,3 +75,4 @@ $ mrt add mandrill
           ]
           from_email: "from@email.com"
           to: [email: "to@email.com"]
+```
