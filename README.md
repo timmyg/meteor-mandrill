@@ -3,30 +3,20 @@ Mandrill for Meteor
 
 Meteor package for sending email via Mandrill
 
-##  Installation
-
-``` sh
-$ meteor add email
-
-$ meteor add http
-
-$ mrt add mandrill
-```
-
 ### Usage for SMTP email (coffeescript)
     # in server code
     Meteor.startup ->
         Meteor.Mandrill.config
             username: "YOUR_MANDRILL_USERNAME"
             key: "YOUR_MANDRILL_API_KEY"
-            
-    
-    # server method to send email via mandrill        
+
+
+    # server method to send email via mandrill
     @sendEmail = (to, subject, htmlText) ->
         Meteor.Mandrill.send
         	to: to
     		from: fromEmail
-    		#cc, bcc, replyTo 
+    		#cc, bcc, replyTo
     		subject: subject
     		html: htmlText
 
@@ -37,7 +27,7 @@ $ mrt add mandrill
         # template key
         templateSlug: "test1"
         # template dynamic content
-        # example below for when template contains 
+        # example below for when template contains
         # <div mc:edit="userFirstName"> ("content" value inserted here) </div>
         templateContent: [
             {
