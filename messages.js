@@ -48,7 +48,7 @@ _.extend(Meteor.Mandrill, {
    */
   sendTemplate: function (options, callback) {
     var url = this.apiUrl + "messages/send-template.json";
-    _.extend(options, { headers: [{Content-Type: "application/json"}] });
+    _.extend(options, { headers: [{'Content-Type': "application/json"}] });
     return this.submitRequest(url, options, callback);
   },
 });
