@@ -3,5 +3,10 @@ Package.describe({
 });
 
 Package.on_use(function(api) {
-  api.add_files('mandrill.js', 'server');
+  api.use(['email', 'http', 'underscore'], ['server']);
+  api.add_files(['mandrill.js',
+                 'messages.js',
+                 'subaccounts.js',
+                 'templates.js'],
+                'server');
 });
