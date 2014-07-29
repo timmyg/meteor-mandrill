@@ -10,7 +10,7 @@ Meteor.Mandrill = {
     send: function (options) {
         Email.send(options);
     },
-    sendTemplate: function (options) {
+    sendTemplate: function (options, callback) {
         var url = "https://mandrillapp.com/api/1.0/messages/send-template.json",
             result;
 
@@ -27,7 +27,12 @@ Meteor.Mandrill = {
         };
 
         try {
-            result = HTTP.post(url, options);
+            // if a callback is provided do an asynch call
+            if (!! callback) HTTP.post(url, options, callback);
+
+            // if no callback do a synchronous call and store the result
+            else result = HTTP.post(url, options);
+
         } catch (e) {
             console.log(e.stack);
         }
