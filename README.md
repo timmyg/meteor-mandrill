@@ -4,6 +4,7 @@ Mandrill for Meteor
 Meteor package for sending email via Mandrill
 
 ### Usage for SMTP email (coffeescript)
+```coffeescript
     # in server code
     Meteor.startup ->
         Meteor.Mandrill.config
@@ -19,17 +20,20 @@ Meteor package for sending email via Mandrill
     		#cc, bcc, replyTo
     		subject: subject
     		html: htmlText
+```
 
 ### Usage for API email (coffeescript)
+```coffeescript
     # in server code
     Meteor.Mandrill.sendTemplate
         key: "YOUR_MANDRILL_API_KEY"
         # template key
-        templateSlug: "test1"
+        template_name: "test1"
         # template dynamic content
         # example below for when template contains
         # <div mc:edit="userFirstName"> ("content" value inserted here) </div>
-        templateContent: [
+        # note: you must provide a value for this field, even if it is an empty array
+        template_content: [
             {
               name: "userFirstName"
               content: "Vince Carter"
@@ -37,26 +41,28 @@ Meteor package for sending email via Mandrill
           ]
         # Read more on how to use merge tags in the Mandrill Docs
         # http://help.mandrill.com/entries/21678522-How-do-I-use-merge-tags-to-add-dynamic-content-
-        globalMergeVars: [
-            {
-                name: "var1",
-                content: "Global Value 1"
-            }
-        ]
-        mergeVars: [
-            {
-                "rcpt": "emailadress@domain.com",
-                "vars": [
-                    {
-                        "name": "fname",
-                        "content": "John"
-                    },
-                    {
-                        "name": "lname",
-                        "content": "Smith"
-                    }
-                ]
-            }
-        ]
-        fromEmail: "from@email.com"
-        toEmail: "to@email.com"
+        message:
+          global_merge_vars: [
+              {
+                  name: "var1",
+                  content: "Global Value 1"
+              }
+          ]
+          merge_vars: [
+              {
+                  "rcpt": "emailadress@domain.com",
+                  "vars": [
+                      {
+                          "name": "fname",
+                          "content": "John"
+                      },
+                      {
+                          "name": "lname",
+                          "content": "Smith"
+                      }
+                  ]
+              }
+          ]
+          from_email: "from@email.com"
+          to: [email: "to@email.com"]
+```
