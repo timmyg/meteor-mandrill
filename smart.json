@@ -1,9 +1,13 @@
 {
     "name": "mandrill",
     "description": "Send emails via Mandrill via SMTP or via Mandrill API.",
-    "homepage": "https://github.com/timmyg/meteor-mandrill",
-    "author": "Tim Giblin",
+    "homepage": "https://github.com/andrewdhazlett/meteor-mandrill",
+    "author": "Andrew Hazlett",
     "version": "0.0.6",
-    "git": "https://github.com/timmyg/meteor-mandrill.git",
+    "git": "https://github.com/andrewdhazlett/meteor-mandrill.git",
+    "meteor": {
+      "git": "https://github.com/meteor/meteor",
+      "tag": "release/0.8.3"
+    },
     "packages": {}
 }
