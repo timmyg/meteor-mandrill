@@ -1,0 +1,19 @@
+{
+  "meteor": {
+    "git": "https://github.com/meteor/meteor",
+    "tag": "release/0.8.3",
+    "commit": "1b9bb206cd229fe1639d9c1f94455865000ba5c3"
+  },
+  "dependencies": {
+    "basePackages": {
+      "mandrill": {
+        "path": "."
+      }
+    },
+    "packages": {
+      "mandrill": {
+        "path": "."
+      }
+    }
+  }
+}
