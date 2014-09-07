@@ -7,13 +7,13 @@ testAsyncMulti 'Mandrill: messages - send', [
       html: 'asdf'
     EmailTest.hookSend expect (sendOptions) ->
       test.equal options, sendOptions, 'expected options to match'
-    Meteor.Mandrill.send options
+    Mandrill.send options
 ]
 
 testAsyncMulti 'Mandrill: messages - sendTemplate', [
   (test, expect) ->
     options =
-      key: Meteor.Mandrill.apiKey
+      key: Mandrill.apiKey
       template_name: 'meteor-mandrill-test'
       template_content: [ name: 'SomeTemplateContent', content: 'qwer']
       message:
@@ -22,7 +22,7 @@ testAsyncMulti 'Mandrill: messages - sendTemplate', [
         from_email: 'from@meteor-mandrill.com'
         to: [ email: 'recipient@meteor-mandrill.com' ]
       subaccount: 'meteor-mandrill-test'
-    Meteor.Mandrill.sendTemplate options, expect (err, res) ->
+    Mandrill.sendTemplate options, expect (err, res) ->
       test.isNull err, 'expected err to be null'
       test.equal res.statusCode, 200, 'expected the status code to be 200'
 ]

@@ -1,5 +1,5 @@
-Meteor.Mandrill = Meteor.Mandrill || {};
-_.extend(Meteor.Mandrill, {
+
+_.extend(Mandrill, {
   send: Email.send,
   /**
    * Send a new transactional message through Mandrill using a template

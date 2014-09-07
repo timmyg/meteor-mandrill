@@ -1,5 +1,5 @@
-Meteor.Mandrill = Meteor.Mandrill || {};
-_.extend(Meteor.Mandrill, {
+Mandrill = {};
+_.extend(Mandrill, {
   apiUrl: "https://mandrillapp.com/api/1.0/",
   config: function (options) {
     var host, key, port, username;

@@ -1,4 +1,4 @@
-Meteor.Mandrill.apiKey = 'EJoQQxAK1PZYgnnn5XnqIQ'
-Meteor.Mandrill.config
+_.extend Mandrill, apiKey: 'EJoQQxAK1PZYgnnn5XnqIQ'
+Mandrill.config
   username: 'andrew@hazlett.me'
   key: Meteor.Mandrill.apiKey
