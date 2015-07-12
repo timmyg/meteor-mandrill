@@ -1,9 +1,9 @@
 Mandrill for Meteor
 ===============
 
-Meteor package for sending email via Mandrill
+Meteor package for sending email via Mandrill's HTTP API. For npm package wrappers, see [mjmasn:mandrill](https://github.com/mjmasn/mandrill/).
 
-### Usage for SMTP email (coffeescript)
+### Usage for SMTP email (CoffeeScript)
 ```coffeescript
     # in server code
     Meteor.startup ->
